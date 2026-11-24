@@ -1,0 +1,36 @@
+# Secrets et configuration propres à chaque serveur : jamais dans le dépôt
+config.local.php
+*.local.php
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# Données, journaux, sauvegardes
+data/
+logs/
+*.log
+*.sql
+*.sql.gz
+*.bak
+*.old
+*.orig
+*.save
+*.swp
+*~
+
+# Dépendances et outils
+vendor/
+node_modules/
+composer.phar
+
+# Fichiers de test temporaires
+www/test.php
+www/diagnostic-exu/
+
+# Systèmes
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

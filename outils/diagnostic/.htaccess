@@ -1,0 +1,21 @@
+# EXU · dossier de diagnostic · version 0.4.1
+# Temporaire : supprimer le dossier diagnostic-exu/ après usage.
+
+DirectoryIndex index.php
+
+# Seuls index.php et diagnostic.css sont servis
+<FilesMatch "^(?!(index\.php|diagnostic\.css)$)">
+  Require all denied
+</FilesMatch>
+
+# Jamais de cache : ni navigateur, ni CDN
+<IfModule mod_expires.c>
+  ExpiresActive Off
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Cache-Control "no-store, max-age=0"
+  Header always set X-Robots-Tag "noindex, nofollow"
+  # Remplace la politique du site pour autoriser l'envoi du formulaire vers cette même page
+  Header always set Content-Security-Policy "default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"
+</IfModule>

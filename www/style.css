@@ -1,0 +1,167 @@
+/* exu · feuille de style de la page de garde · version 0.4.1 */
+:root {
+  --fond: #eef2f8;
+  --carte: #ffffff;
+  --bordure: #d9e0ea;
+  --bleu: #4e7bb8;
+  --lien: #2f5f9e;
+  --marine: #1b3557;
+  --texte: #24303f;
+  --texte-doux: #4f5d6e;
+  --trait: #dfe6ef;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: var(--fond);
+  color: var(--texte);
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.carte {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 64rem;
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: 6px;
+  padding: 6rem 6rem 3.5rem;
+}
+.motif {
+  position: absolute;
+  right: -11rem;
+  bottom: -15rem;
+  width: 38rem;
+  height: auto;
+  pointer-events: none;
+}
+.motif .a { fill: none; stroke: #dfe6ef; stroke-width: 1.5; }
+.motif .b { fill: none; stroke: #e6ecf3; stroke-width: 1.5; }
+.contenu { position: relative; }
+.intro, .engagements, .etat, .pied { max-width: 34rem; }
+
+/* Marque */
+.marque {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4.5rem;
+  color: inherit;
+  text-decoration: none;
+  width: fit-content;
+}
+.marque img { height: 3.4rem; width: auto; display: block; }
+.marque-texte { line-height: 1.1; }
+.marque-nom {
+  display: block;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--marine);
+}
+.marque-sous {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--bleu);
+  letter-spacing: 0.01em;
+}
+
+/* Titre et texte */
+h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--marine);
+}
+.intro { margin: 0 0 2.75rem; }
+
+/* Engagements */
+.engagements {
+  list-style: none;
+  margin: 0 0 3rem;
+  padding: 1.75rem 0 0;
+  border-top: 1px solid var(--trait);
+  display: grid;
+  gap: 1.1rem;
+}
+.engagements li {
+  display: grid;
+  grid-template-columns: 0.6rem 1fr;
+  column-gap: 0.9rem;
+  font-size: 0.97rem;
+  color: var(--texte-doux);
+}
+.engagements li::before {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-top: 0.55rem;
+  border: 2px solid var(--bleu);
+  border-radius: 50%;
+}
+.engagements strong { color: var(--texte); font-weight: 600; }
+
+/* État du projet */
+.etat {
+  position: relative;
+  margin: 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--trait);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--texte-doux);
+}
+.etat strong { color: var(--texte); font-weight: 600; }
+
+/* Pied de page */
+.pied {
+  position: relative;
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--texte-doux);
+}
+.pied ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+}
+.version { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Liens */
+a { color: var(--lien); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { color: var(--marine); text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--bleu); outline-offset: 3px; border-radius: 2px; }
+.marque:hover { color: inherit; }
+
+/* Page d'erreur */
+.retour { margin: 0 0 3rem; font-weight: 600; }
+
+@media (max-width: 48rem) {
+  .carte { padding: 3rem 1.5rem 2rem; }
+  .marque { margin-bottom: 3rem; }
+  .marque img { height: 2.8rem; }
+  .marque-nom { font-size: 1.8rem; }
+  .motif { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}

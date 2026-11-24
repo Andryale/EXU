@@ -1,0 +1,6 @@
+# exu · signalement de failles de sécurité (RFC 9116)
+# Merci de signaler toute vulnérabilité de façon confidentielle avant de la rendre publique.
+Contact: https://andryale.org/contact/
+Expires: 2027-11-24T00:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://exu.fr/.well-known/security.txt

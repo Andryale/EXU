@@ -1,0 +1,17 @@
+# exu · robots.txt · version 0.4.1
+# Seule la page d'accueil est à indexer. Les fichiers listés en Allow servent à son affichage.
+# Ce fichier est une consigne pour les robots, pas une protection : rien de privé n'est publié ici.
+
+User-agent: *
+Allow: /$
+Allow: /style.css
+Allow: /logo-exu.png
+Allow: /favicon.ico
+Allow: /icon-192.png
+Allow: /icon-512.png
+Allow: /apple-touch-icon.png
+Allow: /site.webmanifest
+Allow: /.well-known/security.txt
+Disallow: /
+
+Sitemap: https://exu.fr/sitemap.xml
